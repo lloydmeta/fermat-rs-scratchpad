@@ -5,7 +5,7 @@ use std::error::Error;
 
 fn main() -> Result<(), Box<Error>> {
     let key = Fernet::generate_key();
-    let fernet = Fernet::new(&key).unwrap();
+    let fernet = Fernet::new(&key).expect("Couldn't initialise fernet");
 
     let my_message = "my top secret message";
     println!("my_message: [{}]", my_message);
